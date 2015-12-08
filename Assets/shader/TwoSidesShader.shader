@@ -47,7 +47,7 @@ void surf (Input IN, inout SurfaceOutput o) {
 	o.Emission = c.rgb * tex2D(_Illum, IN.uv_Illum).a;
 	o.Specular = _Shininess;
 	o.Alpha = c.a;
-	o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap));
+	o.Normal = -UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap));
 }
 ENDCG
 }
