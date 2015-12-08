@@ -17,7 +17,7 @@ public class JsonManager : MonoBehaviour {
     public static JsonManager shareJsonManager = null;
     void Awake()
     {
-        StreamReader reader = new StreamReader(Application.dataPath+"/LoadData/"+filename);
+		StreamReader reader = new StreamReader(Application.dataPath+"/StreamingAssets/"+filename);
         string rawData = reader.ReadToEnd();
         Debug.Log("rawData is "+rawData);
         reader.Close();

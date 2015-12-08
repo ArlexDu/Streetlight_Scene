@@ -23,7 +23,7 @@ public class BronFireWork : MonoBehaviour {
 		}
 		CreateFireWorks ();
 		startTime = Time.time;
-		time = Random.Range (1,6);
+		time = Random.Range (0,5);
 	}
 	
 	// Update is called once per frame
@@ -32,6 +32,7 @@ public class BronFireWork : MonoBehaviour {
 			CreateFireWorks();
 			startTime = Time.time;
 			time = Random.Range (0,5);
+			Debug.Log ("time is "+time);
 		}
 	}
 	//选择烟花的类型
@@ -46,8 +47,13 @@ public class BronFireWork : MonoBehaviour {
 	}
 	//生成烟花
 	private void CreateFireWorks(){
+		Debug.Log ("Create Fire Work");
 		ChooseFireWorks ();
 		ChoosePosition ();
 		Instantiate (choosefire,chooseposition.position,new Quaternion(0,0,0,0));
+
 	}
+
+
+
 }
