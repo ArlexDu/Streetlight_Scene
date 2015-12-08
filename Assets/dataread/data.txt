@@ -1,1 +1,7 @@
-{"Slight1_y":0.1,"Slight2_y":0,"Slight3_y":-0.209,"Slight4_y":-0.257,"Flight1_y":0.0911,"Flight2_y":0.1017,"Flight3_y":0.1578,"Flight4_y":0.21716}
+{"Slight1_y":0.21,"Slight2_y":0,"Slight3_y":-0.3,"Slight4_y":-0.26,"Flight1_y":0.0911,
+"Flight2_y":0.1017,"Flight3_y":0.1578,"Flight4_y":0.20344,"position1_x":4.6,"position1_y":-2.96,"position1_z":-0.64,
+"position2_x":4.6,"position2_y":-2.96,"position2_z":9.9,"position3_x":7.4,"position3_y":-2.96,"position3_z":16.5,
+"position4_x":4.6,"position4_y":-2.96,"position4_z":-9.5,"position5_x":-2.1,"position5_y":-2.96,"position5_z":-15.9,
+"position6_x":-21.7,"position6_y":-2.96,"position6_z":-17,"position7_x":-31.9,"position7_y":-2.96,"position7_z":-20.7,
+"position8_x":-49.6,"position8_y":-2.96,"position8_z":1.03,"position9_x":-27.8,"position9_y":-2.96,"position9_z":-5.6,
+"position10_x":24,"position10_y":-2.96,"position10_z":-4.5}
