@@ -43,7 +43,7 @@ public class FetchInternet : MonoBehaviour {
 		//		Debug.Log("bright is "+ bright);
 				//改变灯光的强度
 				if(lastbright!=float.Parse(bright)){
-					GameObject.Find("Lighting").GetComponent<ControlLighting>().changeIntensity(float.Parse(bright));
+					GameObject.Find("Light").GetComponent<ControlLight>().changeIntensity(float.Parse(bright));
 					lastbright = float.Parse(bright);
 				}
 			}
