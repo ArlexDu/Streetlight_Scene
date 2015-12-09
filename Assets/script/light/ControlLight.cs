@@ -65,17 +65,17 @@ public class ControlLight : MonoBehaviour {
             }
         }
         //远程端对于亮度的调节,目前测试，以后要改这段代码
-        if (false)
+        if (true)
         {
             if (old_intensity < Light_intensity)
             {
-                Debug.Log("change up");
+           //     Debug.Log("change up");
                 ChangeLightIntensity(0.05f);
             }
             else if (old_intensity > Light_intensity)
             {
                 ChangeLightIntensity(-0.05f);
-                Debug.Log("change down");
+         //       Debug.Log("change down");
             }
         }
 		

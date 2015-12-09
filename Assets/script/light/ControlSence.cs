@@ -26,17 +26,17 @@ public class ControlSence : MonoBehaviour {
         ControlByKeyBoard = jsonmanager.getcontrolbyKey();
         ControlBykinect = jsonmanager.getcontrolbyKinect();
         //放置灯的位置
-        Debug.Log("ShowLight");
+     //   Debug.Log("ShowLight");
         Transform Light = GameObject.Find ("Lights").transform;
 		for (int i=0; i<Light.childCount; i++) {
 			lights[i] = Light.GetChild(i);
             lights[i].localPosition = new Vector3(0, jsonmanager.getSvalue(i + 1), 0);
             lights[i].GetChild(0).localPosition = new Vector3(0, jsonmanager.getFvalue(i + 1), 0);
             if (i!=0){
-                Debug.Log(i+"Hide");
+          //      Debug.Log(i+"Hide");
                 lights[i].gameObject.SetActive(false);
 			}else{
-                Debug.Log(i+"Show");
+          //      Debug.Log(i+"Show");
                 lights[i].gameObject.SetActive(true);
 			}
 		}
@@ -54,11 +54,11 @@ public class ControlSence : MonoBehaviour {
             {
                 lights[currentlight].gameObject.SetActive(false);
                 currentlight = (currentlight + 1) > max ? 0 : (currentlight + 1);
-                Debug.Log("Count is " + currentlight);
+           //     Debug.Log("Count is " + currentlight);
                 lights[currentlight].FindChild("Light").localPosition = new Vector3(0, 0, 0);
                 lights[currentlight].FindChild("Light").localRotation = new Quaternion(0, 0, 0, 0);
                 lights[currentlight].FindChild("fixed").localRotation = new Quaternion(0, 0, 0, 0);
-                Debug.Log(lights[currentlight].FindChild("Light").localPosition.y);
+          //      Debug.Log(lights[currentlight].FindChild("Light").localPosition.y);
                 lights[currentlight].gameObject.SetActive(true);
             }
         }
@@ -106,6 +106,9 @@ public class ControlSence : MonoBehaviour {
             lights[i] = Light.GetChild(i);
             lights[i].localPosition = new Vector3(0, jsonmanager.getSvalue(i + 1), 0);
             lights[i].GetChild(0).localPosition = new Vector3(0, jsonmanager.getFvalue(i + 1), 0);
+            lights[i].FindChild("Light").localPosition = new Vector3(0, 0, 0);
+            lights[i].FindChild("Light").localRotation = new Quaternion(0, 0, 0, 0);
+            lights[i].FindChild("fixed").localRotation = new Quaternion(0, 0, 0, 0);
             if (i != 0)
             {
                 lights[i].gameObject.SetActive(false);

@@ -32,7 +32,7 @@ public class JsonManager : MonoBehaviour {
     {
 		StreamReader reader = new StreamReader(Application.dataPath+"/StreamingAssets/"+filename);
         string rawData = reader.ReadToEnd();
-        Debug.Log("rawData is "+rawData);
+     //   Debug.Log("rawData is "+rawData);
         reader.Close();
         data = JsonMapper.ToObject(rawData);
         getvalue();
