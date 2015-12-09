@@ -1031,9 +1031,9 @@ public class KinectManager : MonoBehaviour
 		
 		// calculate map width and height in percent, if needed
 		if(MapsPercentWidth == 0f)
-			MapsPercentWidth = (sensorData.depthImageWidth / 2) / cameraRect.width;
+			MapsPercentWidth = (sensorData.depthImageWidth ) / cameraRect.width;
 		if(MapsPercentHeight == 0f)
-			MapsPercentHeight = (sensorData.depthImageHeight / 2) / cameraRect.height;
+			MapsPercentHeight = (sensorData.depthImageHeight ) / cameraRect.height;
 		
 		if(computeUserMap)
 		{
@@ -1402,24 +1402,24 @@ public class KinectManager : MonoBehaviour
 					else
 					{
 //						// Create a blending color based on the depth histogram
-//						float histDepth = usersHistogramMap[userDepth];
-//						Color c = new Color(histDepth, histDepth, histDepth, 0.9f);
-//						
-//						switch(userMap % 4)
-//						{
-//						case 0:
-//							usersHistogramImage[i] = Color.red * c;
-//							break;
-//						case 1:
-//							usersHistogramImage[i] = Color.green * c;
-//							break;
-//						case 2:
-//							usersHistogramImage[i] = Color.blue * c;
-//							break;
-//						case 3:
-//							usersHistogramImage[i] = Color.magenta * c;
-//							break;
-//						}
+						float histDepth = usersHistogramMap[userDepth];
+						Color c = new Color(histDepth, histDepth, histDepth, 0.9f);
+						
+						switch(userMap % 4)
+						{
+						case 0:
+							usersHistogramImage[i] = Color.red * c;
+							break;
+						case 1:
+							usersHistogramImage[i] = Color.green * c;
+							break;
+						case 2:
+							usersHistogramImage[i] = Color.blue * c;
+							break;
+						case 3:
+							usersHistogramImage[i] = Color.magenta * c;
+							break;
+						}
 					}
 				}
 				
