@@ -10,9 +10,20 @@ public class LightGestureListener : MonoBehaviour, KinectGestures.GestureListene
 	private bool swipeRight;
 	private bool swipeUp;
 	private bool swipeDown;
-	
-	
-	public bool IsSwipeLeft()
+    private bool jump;
+
+    public bool IsJump()
+    {
+        if (jump)
+        {
+            jump = false;
+            return true;
+        }
+
+        return false;
+    }
+
+    public bool IsSwipeLeft()
 	{
 		if(swipeLeft)
 		{
@@ -63,11 +74,12 @@ public class LightGestureListener : MonoBehaviour, KinectGestures.GestureListene
 		KinectManager manager = KinectManager.Instance;
 		
 		manager.DetectGesture(userId, KinectGestures.Gestures.SwipeLeft);
-		manager.DetectGesture(userId, KinectGestures.Gestures.SwipeRight);
-//		manager.DetectGesture(userId, KinectGestures.Gestures.SwipeUp);
-//		manager.DetectGesture(userId, KinectGestures.Gestures.SwipeDown);
+        manager.DetectGesture(userId, KinectGestures.Gestures.Jump);
+        //		manager.DetectGesture(userId, KinectGestures.Gestures.SwipeRight);
+        //		manager.DetectGesture(userId, KinectGestures.Gestures.SwipeUp);
+        //		manager.DetectGesture(userId, KinectGestures.Gestures.SwipeDown);
 
-	}
+    }
 	
 	public void UserLost(long userId, int userIndex)
 	{
@@ -92,8 +104,10 @@ public class LightGestureListener : MonoBehaviour, KinectGestures.GestureListene
 			swipeUp = true;
 		else if(gesture == KinectGestures.Gestures.SwipeDown)
 			swipeDown = true;
-		
-		return true;
+        else if (gesture == KinectGestures.Gestures.Jump)
+            jump = true;
+
+        return true;
 	}
 
 	public bool GestureCancelled (long userId, int userIndex, KinectGestures.Gestures gesture, 

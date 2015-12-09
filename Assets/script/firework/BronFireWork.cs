@@ -16,11 +16,15 @@ public class BronFireWork : MonoBehaviour {
 	private float startTime;
 	// Use this for initialization
 	void Start () {
-		//获得所有的位置点
-		Transform allPosition = GameObject.Find ("Position").transform;
-		for (int i =0; i<allPosition.childCount; i++) {
-			positions[i] = allPosition.GetChild(i);
-		}
+        //获得所有的位置点
+        JsonManager jsonmanager = JsonManager.instance;
+        Transform allPosition = GameObject.Find("Position").transform;
+        for (int i = 0; i < allPosition.childCount; i++)
+        {
+            positions[i] = allPosition.GetChild(i);
+            positions[i].localPosition = new Vector3(jsonmanager.getfireworkX(i), jsonmanager.getfireworkY(i), jsonmanager.getfireworkZ(i));
+            positions[i] = allPosition.GetChild(i);
+        }
 		CreateFireWorks ();
 		startTime = Time.time;
 		time = Random.Range (0,5);
@@ -32,7 +36,7 @@ public class BronFireWork : MonoBehaviour {
 			CreateFireWorks();
 			startTime = Time.time;
 			time = Random.Range (0,5);
-			Debug.Log ("time is "+time);
+	//		Debug.Log ("time is "+time);
 		}
 	}
 	//选择烟花的类型
@@ -47,7 +51,7 @@ public class BronFireWork : MonoBehaviour {
 	}
 	//生成烟花
 	private void CreateFireWorks(){
-		Debug.Log ("Create Fire Work");
+	//	Debug.Log ("Create Fire Work");
 		ChooseFireWorks ();
 		ChoosePosition ();
 		Instantiate (choosefire,chooseposition.position,new Quaternion(0,0,0,0));
